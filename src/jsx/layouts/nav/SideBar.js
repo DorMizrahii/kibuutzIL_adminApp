@@ -9,6 +9,7 @@ import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { ThemeContext } from "../../../context/ThemeContext";
 
 import profile from "../../../images/user.jpg";
+import LogOut from "./Logout"
 
 const reducer = (previousState, updatedState) => ({
    ...previousState,
@@ -116,8 +117,6 @@ const SideBar = () => {
                                  <Collapse
                                     in={
                                        state.active === data.title
-                                          ? true
-                                          : false
                                     }
                                  >
                                     <ul
@@ -160,9 +159,7 @@ const SideBar = () => {
                                                          <Collapse
                                                             in={
                                                                state.activeSubmenu ===
-                                                               data.title
-                                                                  ? true
-                                                                  : false
+                                                                data.title
                                                             }
                                                          >
                                                             <ul
@@ -228,7 +225,6 @@ const SideBar = () => {
                      );
                   }
                })}
-            </ul>
             {/* <div className="dropdown header-profile2 ">
             <div className="header-info2 text-center">
               <img src={profile} alt="" />
@@ -243,6 +239,8 @@ const SideBar = () => {
               </div>
             </div>
           </div> */}
+            <li><LogOut /></li>
+            </ul>
             <div className="copyright">
                <p className="fs-12 text-center">
                   Made with{" "}
